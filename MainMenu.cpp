@@ -52,6 +52,7 @@ void normalSize() {
 void customer_Options() {
 
     cout << endl << endl;
+    std::cout << colors::green;
     cout << "0. Exit to Customer Options" << endl;
     cin >> answer;
     switch (answer) {
