@@ -11,18 +11,25 @@
 #include "renewal.h"
 #include "benefits.h"
 #include "MainMenu.h"
+
 using namespace std;
 
 extern string username;
 extern struct users;
+extern struct policyUsers;
 extern map <string, users> specific;
+extern map <string, policyUsers> specificPolicy;
 extern int answer;
 string pass;
 
-void customer() {
-    makingStruct();
-    loggingin();
 
+void customer() {
+
+    makingStruct();
+    policyStruct();
+    renewalStruct();
+    loggingin();
+    
 
     customer_Menu();
 
@@ -32,7 +39,10 @@ void customer() {
 void loggingin() {
 
     int count = 0;
+   
 
+    
+    
     
     cout << "Enter Username: ";
     cin >> username;
@@ -72,6 +82,7 @@ void passwordCensor() {
 
 void customer_Menu() {
     system("cls");
+
 
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
     std::cout << colors::bold << colors::red;

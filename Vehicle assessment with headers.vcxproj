@@ -155,6 +155,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="insurance.txt" />
+    <Text Include="policy.txt" />
+    <Text Include="renewal.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

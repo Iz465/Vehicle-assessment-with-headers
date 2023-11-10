@@ -4,6 +4,18 @@
 
 using namespace std;
 
+struct policyUsers {
+    string username;
+    string vehicleType;
+    string policyType;
+    string price;
+    string yearlyPrice;
+
+
+};
+
+
+
 struct users {
     string first;
     string last;
@@ -17,7 +29,13 @@ struct users {
     string password;
     string authorised;
     string policy_number;
-    string vehicleType;
-    string chosenPolicy;
-    int price;
+
 };
+
+
+struct renewalUsers {
+    string username;
+    string card;
+    string code;
+};
+

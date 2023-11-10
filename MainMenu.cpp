@@ -65,10 +65,10 @@ void customer_Options() {
 void mainmenu() {
 
     cout << endl << endl;
-    cout << "1. Exit to Main Menu" << endl;
+    cout << "0. Exit to Main Menu" << endl;
     cin >> answer;
     switch (answer) {
-    case 1: start(); break;
+    case 0: start(); break;
     }
 }
 

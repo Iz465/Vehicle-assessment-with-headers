@@ -4,6 +4,7 @@
 #include "colors.hpp"
 #include "struct.h"
 #include <map>
+#include "userData.h"
 
 using namespace std;
 
@@ -20,7 +21,9 @@ void renewal() {
     cout << "Name: " << specific[username].first << " " << specific[username].last << endl;
     cout << "Policy Number: " << specific[username].policy_number << endl;    
     cout << "Contact Details: " << specific[username].phone << endl << endl;
+    
 
+   // cout << "Would you like to renew your insurance"
     cout << "Your Vehicle number " << specific[username].vehicle << " does not need to be renewed for another three years as all new vehicles that sign up with our insurance get insurance for three years." << endl;
     cout << "Once those three years are up you will need to renew your vehicle every year.";
     cout << "You can enter your card details for us to update your insurance once the three years are up." << endl << endl;
@@ -46,6 +49,7 @@ void renewal() {
             cout << endl;
         }
         cout << "Thank you for your time. You're insurance will be updated once it needs renewing";
+        dataRenewal();
   
     customer_Options();
 }

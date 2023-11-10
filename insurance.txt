@@ -1,1 +1,3 @@
 Isak,Molving,02/09/2000,Male,02102541126,isakmolvviiing@gmail.com,97 Island Bay Road,ABCD45154,iziz,rune,false,41
+Dave,Lar,01/01/1900,Male,12512512515,davidlar@gmail.com,Auckland New Zealand,GHOI123,dav,butter,true,1214
+David,Lar,01/01/1000,Male,12412421241,isakmolvviiing@gmail.com,Auckland New Zealand,GHOI125125,dav,butter,true,133

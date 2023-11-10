@@ -1,0 +1,2 @@
+iziz,Motorbike,Natural Disastor,120,1200
+dav,Motorbike,Fire,120,1200

@@ -7,12 +7,16 @@
 #include <map>
 #include "struct.h"
 #include "userData.h"
+
 using namespace std;
 
 extern int answer;
 extern string username;
 extern struct users;
+extern struct policyUsers;
 extern map <string, users> specific;
+extern map <string, policyUsers> specificPolicy;
+
 int chosenVehicle;
 int motorbike = 70;
 int car = 80;
@@ -26,6 +30,7 @@ int theft = 50;
 int carCrash = 60;
 int disastor = 50;
 string policyType;
+int yearlyPrice;
 
 void policy() {
     cout << "Policy" << endl << endl;
@@ -88,6 +93,8 @@ void quote() {
 
 
     vehicle_data();
+    dataPolicy();
+    policyStruct();
 
 }
 
@@ -104,14 +111,14 @@ void policy_answer() {
 
 void vehicle_data() {
     price += chosenVehicle + chosenPolicy;
-    specific[username].vehicleType = vehicleType;
-    specific[username].chosenPolicy = policyType;
-    specific[username].price = price;
-
+    yearlyPrice += price * 10;
+ 
 }
 
 void policy_registration() {
-    cout << "Below are the details associated with the account " << username << endl;
+    
+    
+    cout << "Below are the details associated with the account " << specificPolicy[username].username << endl;
     cout << "Policy Number: " << specific[username].policy_number << endl;
     cout << "Name: " << specific[username].first << " " << specific[username].last << endl;
     cout << "DOB: " << specific[username].birth << endl;
@@ -119,8 +126,8 @@ void policy_registration() {
     cout << "Phone Number: " << specific[username].phone << endl;
     cout << "Email: " << specific[username].email << endl;
     cout << "Address: " << specific[username].address << endl;
-    cout << "Vehicle: " << specific[username].vehicle << endl;
-    cout << "Vehicle Type: " << specific[username].vehicleType << endl;
-    cout << "Policies you have Applied for: " << specific[username].chosenPolicy << endl;
-    cout << "The Price for the insurance you have requested: $" << specific[username].price << " monthly and $" << specific[username].price * 10 << " yearly" << endl;
+    cout << "Vehicle Code: " << specific[username].vehicle << endl;
+    cout << "Vehicle Type: " << specificPolicy[username].vehicleType << endl;
+    cout << "Policiy you have applied for: " << specificPolicy[username].policyType << endl;
+    cout << "The Price for the insurance you have requested: $" << specificPolicy[username].price << " monthly and $" << specificPolicy[username].yearlyPrice  << " yearly" << endl;
 }

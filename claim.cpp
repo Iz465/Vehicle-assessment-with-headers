@@ -19,14 +19,14 @@ void claim() {
     cout << "Name: " << specific[username].first << " " << specific[username].last << endl;
     cout << "Contact Details: " << specific[username].phone << endl;
     cout << "Policy Number: " << specific[username].policy_number << endl;
-    cout << "Vehicle: " << specific[username].vehicleType << endl;
-    cout << "Insurance Claim Problem: " << specific[username].chosenPolicy << endl << endl;
+   // cout << "Vehicle: " << specific[username].vehicleType << endl;
+   // cout << "Insurance Claim Problem: " << specific[username].chosenPolicy << endl << endl;
     
-    cout << "Please give the date and a description of the " << specific[username].chosenPolicy << endl << endl;
+  //  cout << "Please give the date and a description of the " << specific[username].chosenPolicy << endl << endl;
     cout << "Date: ";
     cin.ignore();
     getline(cin, date);
-    cout << "What caused the " << specific[username].chosenPolicy << "?" << endl;
+   // cout << "What caused the " << specific[username].chosenPolicy << "?" << endl;
     getline(cin, description);
     system("cls");
     std::cout << colors::red;
