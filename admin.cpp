@@ -12,18 +12,20 @@ using namespace std;
 
  string authorised;
  string admin_code;
- extern struct users;
+
  extern map <string, users> specific;
  extern string username;
  extern int answer;
- extern struct policyUsers;
- extern map <string, policyUsers> specificPolicy;
+ extern map <string, renewalUsers> specificRenewal;
  extern vector <policyUsers> policyVector;
-
+ extern vector <users> usersVector;
+ extern vector <renewalUsers> renewalVector;
+ extern map <string, policyUsers> specificPolicy;
+ int counting = 0;
 char administrator;
 
 void admin_process() {
-  
+    
     cout << "Are you an Admin? (N) or (Y)";
     cin >> administrator;
    
@@ -42,32 +44,84 @@ void admin_process() {
     }
 }
 
+void countingNum() {
+    counting++;
+    if (counting % 2 == 0) {
+        cout << colors::yellow;
+    }
+    else {
+        cout << colors::red;
+
+    }
+}
+
 
 void customerReport() {
     policyStruct();
     cout << "Customer Report" << endl << endl;
-    cout << colors::blue;
-    cout << "Below are our customers who have submitted their insurance claims" << endl;
+    cout << colors::yellow;
+    cout << "Below are our customers who have submitted their insurance claims" << endl << endl;
     for (auto i : policyVector) {
-        
+        countingNum();
         cout << "Username: " << i.username << " | Vehicle Type: " << i.vehicleType << " | Policy they are claiming: " << i.policyType << endl;
     }
    
 }
 
+void registrationReport() {
+    
+    cout << "Registration Report" << endl << endl;
+    
+    cout << colors::yellow;
+    cout << "Below is all the information involving users who have registrated" << endl << endl;
+    for (auto i : usersVector) {
+        countingNum();
+       
+        cout << "Username: " << i.username << " | Full Name: " << i.first << " " << i.last << " | Birth: " << i.birth << " | Address: " << i.address << " | Policy Number: " << i.policy_number << endl;
+  
+    }
+
+}
+
+void renewalReport() {
+    renewalStruct();
+    cout << "Renewal Report" << endl << endl;
+    cout << colors::yellow;
+    cout << "Below shows all users who have renewed their insurance" << endl;
+    for (auto i : renewalVector) {
+        countingNum();
+        cout << "Username: " << i.username << endl;
+
+    }
+
+
+}
+
+
 void admin() {
+  cout << colors::red;
     cout << "Admin" << endl << endl;
+    cout << colors::yellow;
     makingStruct();
     loggingin();
     if (specific[username].authorised == "true") {
         system("cls");
-        cout << "Welcome " << username << endl << endl;
+        cout << colors::red;
+        cout << "\t" << "\t" << "\t" << "\t" << "Welcome " << username << endl << endl;
+        cout << colors::yellow;
         cout << "Here are the reports for the company" << endl;
+        cout << colors::red;
         cout << "1. Customer Report " << endl;
+        cout << colors::yellow;
         cout << "2. Claim Report " << endl;
+        cout << colors::red;
         cout << "3. Renewal Report: " << endl;
+        cout << colors::yellow;
         cout << "4. Weekly New Registration Report: " << endl;
+        cout << colors::red;
         cout << "5. Updated Policy Information and Special Discounts: " << endl;
+        cout << colors::yellow;
+        cout << "0. Main Menu" << endl;
         cin >> answer;
         system("cls");
         cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
@@ -75,9 +129,10 @@ void admin() {
         switch (answer) {
         case 1: customerReport(); break;
         case 2: break;
-        case 3: break;
-        case 4: break;
+        case 3: renewalReport(); break;
+        case 4: registrationReport();  break;
         case 5: break;
+        case 0: start(); break;
         }
 
     }
@@ -87,3 +142,4 @@ void admin() {
     }
     mainmenu();
 }
+

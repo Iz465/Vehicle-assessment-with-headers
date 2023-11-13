@@ -21,7 +21,7 @@ void start() {
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Birkenhead Vehicle Insurance" << endl << endl;
 
 
-    std::cout << colors::bold << colors::blue;
+    std::cout << colors::bold << colors::yellow;
     cout << "1. Registration" << endl;
     cout << "2. Customer Login" << endl;
     cout << "3. Administrator Login" << endl;
@@ -42,7 +42,7 @@ void normalSize() {
 
     CONSOLE_FONT_INFOEX normal;
     normal.cbSize = sizeof(normal);
-    normal.dwFontSize.Y = 30;
+    normal.dwFontSize.Y = 20;
 
 
 
@@ -52,7 +52,7 @@ void normalSize() {
 void customer_Options() {
 
     cout << endl << endl;
-    std::cout << colors::green;
+    cout << colors::red;
     cout << "0. Exit to Customer Options" << endl;
     cin >> answer;
     switch (answer) {
@@ -65,6 +65,7 @@ void customer_Options() {
 void mainmenu() {
 
     cout << endl << endl;
+    cout << colors::red;
     cout << "0. Exit to Main Menu" << endl;
     cin >> answer;
     switch (answer) {

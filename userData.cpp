@@ -39,9 +39,9 @@ extern int yearlyPrice;
 extern int code;
 extern int card;
 
-
+vector <users> usersVector;
 vector <policyUsers> policyVector;
-
+vector <renewalUsers> renewalVector;
 
 string line;
 
@@ -87,7 +87,7 @@ void makingStruct() {
 
 
             specific.insert({ information.username, information });
-            
+            usersVector.push_back(information);
 
         }
 
@@ -157,7 +157,7 @@ void renewalStruct() {
            
 
             specificRenewal.insert({ renewalInformation.username, renewalInformation });
-
+            renewalVector.push_back(renewalInformation);
         }
     }
     myfile.close();
