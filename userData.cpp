@@ -17,9 +17,11 @@ fstream myfile;
 users information;
 policyUsers policyInformation;
 renewalUsers renewalInformation;
+claimUsers claimInformation;
 map <string, users> specific;
 map <string, policyUsers> specificPolicy;
 map <string, renewalUsers> specificRenewal;
+map <string, claimUsers> specificClaim;
 extern string first;
 extern string last;
 extern string birth;
@@ -38,11 +40,15 @@ extern int price;
 extern int yearlyPrice;
 extern int code;
 extern int card;
+extern string date;
+extern string description;
 
 vector <users> usersVector;
 vector <policyUsers> policyVector;
 vector <renewalUsers> renewalVector;
+vector <claimUsers> claimVector;
 
+int counter = 0;
 string line;
 
 void data() {
@@ -87,10 +93,13 @@ void makingStruct() {
 
 
             specific.insert({ information.username, information });
-            usersVector.push_back(information);
+            counter++;
+            if (counter < line.size()) {
+                usersVector.push_back(information);
+            }
 
         }
-
+        
     }
 
    
@@ -162,6 +171,38 @@ void renewalStruct() {
     }
     myfile.close();
 
+
+
+}
+
+void dataClaim() {
+    myfile.open("claim.txt", ios::app);
+    if (myfile.is_open()) {
+
+        myfile << username << ',' << date << ',' << description << endl;
+
+    }
+    myfile.close();
+
+}
+
+void claimStruct() {
+    myfile.open("claim.txt", ios::in);
+    if (myfile.is_open()) {
+        while (getline(myfile, line)) {
+
+            stringstream currentline;
+            currentline.str(line);
+            getline(currentline, claimInformation.username, ',');
+            getline(currentline, claimInformation.date, ',');
+            getline(currentline, claimInformation.description, ',');
+
+
+            specificClaim.insert({ claimInformation.username, claimInformation });
+            claimVector.push_back(claimInformation);
+        }
+    }
+    myfile.close();
 
 
 }

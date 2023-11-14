@@ -39,3 +39,9 @@ struct renewalUsers {
     string code;
 };
 
+struct claimUsers {
+    string username;
+    string date;
+    string description;
+
+};

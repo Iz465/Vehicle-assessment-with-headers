@@ -4,10 +4,13 @@
 #include "MainMenu.h"
 #include "struct.h"
 #include <map>
+#include "userData.h"
 using namespace std; 
 
 extern struct users;
 extern map <string, users> specific;
+extern struct policyUsers;
+extern map <string, policyUsers> specificPolicy;
 extern string username;
 string date;
 string description;
@@ -26,12 +29,12 @@ void claim() {
     cout << "Date: ";
     cin.ignore();
     getline(cin, date);
-   // cout << "What caused the " << specific[username].chosenPolicy << "?" << endl;
+    cout << "What caused the " << specificPolicy[username].policyType << "?" << endl;
     getline(cin, description);
     system("cls");
     std::cout << colors::red;
-
+    dataClaim();
     cout << "\n" << endl << "\t" << "\t" << "We will review your claim. Thank you for your time" << endl;
     
-    customer_Options();
+    options("customer");
 }

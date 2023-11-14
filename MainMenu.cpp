@@ -5,6 +5,7 @@
 #include "registration.h"
 #include "customer.h"
 #include "admin.h"
+#include "policy.h"
 #include "info.h"
 using namespace std;
 
@@ -32,7 +33,7 @@ void start() {
     switch (answer) {
     case 1:registration(); break;
     case 2:customer(); break;
-    case 3:admin(); break;
+    case 3:adminLogin(); break;
     case 4:info(); break;
     }
 
@@ -49,27 +50,36 @@ void normalSize() {
     SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &normal);
 }
 
-void customer_Options() {
+
+
+
+
+
+
+
+
+
+void options(string a) {
 
     cout << endl << endl;
     cout << colors::red;
-    cout << "0. Exit to Customer Options" << endl;
+    cout << "0. Exit to " << a << " Menu" << endl;
     cin >> answer;
+    
     switch (answer) {
-    case 0: customer_Menu(); break;
+    case 0: if (a == "main") {
+        start(); break;
     }
+          if (a == "customer") {
+              customer_Menu(); break;
+          }
+          if (a == "admin") {
+              admin(); break;
+          }
+          if (a == "policy") {
+              system("cls");
+              policy(); break;
+          }
 
-}
-
-
-void mainmenu() {
-
-    cout << endl << endl;
-    cout << colors::red;
-    cout << "0. Exit to Main Menu" << endl;
-    cin >> answer;
-    switch (answer) {
-    case 0: start(); break;
     }
 }
-

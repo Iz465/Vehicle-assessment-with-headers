@@ -7,3 +7,5 @@ void policyStruct();
 void makingStruct();
 void dataRenewal();
 void renewalStruct();
+void dataClaim();
+void claimStruct();

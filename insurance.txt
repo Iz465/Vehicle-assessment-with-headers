@@ -1,3 +1,4 @@
 Isak,Molving,02/09/2000,Male,02102541126,isakmolvviiing@gmail.com,97 Island Bay Road,ABCD45154,iziz,rune,true,41
-Dave,Lar,01/01/1900,Male,12512512515,davidlar@gmail.com,Auckland New Zealand,GHOI123,dav,butter,true,1214
+Dave,Lar,01/01/1900,Male,12512512515,davidlar@gmail.com,Auckland New Zealand,GHOI123,dav,butter,false,1214
 Garry,Mace,23/12/54,Male,1212999,garrymace@gmail.com,The misty Swamps,6868ttt,maced,spike,false,6591
+Zamorak,Z,01/01/0000,Male,666,zamorak@gmail.com,Gielinor,666,zammy,havoc,false,6830

@@ -17,6 +17,7 @@ int oneyear = 400;
 extern int answer;
 
 void renewal() {
+    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
     cout << "Renewal" << endl << endl;
     std::cout << colors::bold << colors::yellow;
     cout << "This is where you can renew your insurance in case it goes out of date, causing your insurance to cancel" << endl << endl;
@@ -59,5 +60,5 @@ void renewal() {
         dataRenewal();
     }
     
-    customer_Options();
+    options("customer");
 }

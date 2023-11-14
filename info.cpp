@@ -11,5 +11,5 @@ void info() {
     cout << "Our Email: BirkenheadVehicleInsurance@gmail.com" << endl;
     cout << "Our Address: 15 Old Road Birkenhead Auckland" << endl;
     cout << "We are open during: Monday - Friday. 8:00 AM - 4:00 PM" << endl;
-    mainmenu();
+    options("main");
 }

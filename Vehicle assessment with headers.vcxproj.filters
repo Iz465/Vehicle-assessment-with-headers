@@ -91,5 +91,6 @@
     <Text Include="insurance.txt" />
     <Text Include="policy.txt" />
     <Text Include="renewal.txt" />
+    <Text Include="claim.txt" />
   </ItemGroup>
 </Project>

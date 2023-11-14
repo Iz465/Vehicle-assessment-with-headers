@@ -32,14 +32,16 @@ int disastor = 50;
 string policyType;
 int yearlyPrice;
 
-void policy() {
-    cout << "Policy" << endl << endl;
+ void policy() {
+     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Policy" << endl << endl;
+    
     std::cout << colors::bold << colors::blue;
     cout << endl << endl;
     cout << "1. What our insurance covers your vehicles from." << endl << endl;
     cout << "2. Insurance rates " << endl << endl;
     cout << "3. Company Quote " << endl << endl;
     cout << "4. Policy Registration" << endl << endl;
+    cout << "0. Main Menu" << endl << endl;
     cin >> answer;
     system("cls");
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
@@ -48,12 +50,13 @@ void policy() {
     case 2: rates(); break;
     case 3: quote(); break;
     case 4: policy_registration(); break;
+    case 0: start(); break;
     }
 
     void admin_process();
 
-
-    customer_Options();
+    
+    options("policy");
 }
 
 

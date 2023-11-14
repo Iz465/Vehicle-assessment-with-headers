@@ -87,7 +87,7 @@ void customer_Menu() {
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
     std::cout << colors::bold << colors::red;
     cout << "Welcome back " << username << ". Please select one of the following options" << endl << endl;
-    std::cout << colors::bold << colors::blue;
+    std::cout << colors::bold << colors::yellow;
     cout << "1. Our Policy" << endl;
     cout << "2. Claim registration" << endl;
     cout << "3. Renewal" << endl;
@@ -96,7 +96,7 @@ void customer_Menu() {
     cin >> answer;
     system("cls");
     std::cout << colors::bold << colors::red;
-    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
+ //   cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
     switch (answer) {
       case 1: policy(); break;
       case 2: claim(); break;
