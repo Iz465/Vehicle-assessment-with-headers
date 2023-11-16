@@ -37,6 +37,7 @@ struct renewalUsers {
     string username;
     string card;
     string code;
+    string price;
 };
 
 struct claimUsers {
@@ -44,4 +45,11 @@ struct claimUsers {
     string date;
     string description;
 
+};
+
+struct benefitsUsers {
+    string newDiscount;
+    string multiDiscount;
+    string renewalDiscount;
+    string reviewDiscount;
 };

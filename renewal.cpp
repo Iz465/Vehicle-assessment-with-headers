@@ -13,8 +13,20 @@ extern struct users;
 extern map <string, users> specific;
 int card;
 int code;
-int oneyear = 400;
+int oneYear = 400;
+int threeYear = 1000;
 extern int answer;
+extern int price;
+
+
+void renewalPricing(int a) {
+    if (a == 1) {
+        price += oneYear;
+    }
+    else if (a == 2) {
+        price += threeYear;
+    }
+}
 
 void renewal() {
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
@@ -28,13 +40,15 @@ void renewal() {
     
 
    
-    cout << "Insurance renewed for one year = " << oneyear << endl; 
+    cout << "Insurance renewed for one year = $" << oneYear << " | Three years = $" << threeYear << endl;
 
     cout << "Do you wish to renew your insurance?(1. = Yes | 2. = No)" << endl;
     cin >> answer;
     
     if (answer == 1) {
-
+        cout << "Do you wish to renew for one or three years?(1. = One | 2. = Three)" << endl;
+        cin >> answer;
+        renewalPricing(answer);
         cout << "Enter 8 digit credit card number: ";
 
         cin >> card;
@@ -62,3 +76,4 @@ void renewal() {
     
     options("customer");
 }
+

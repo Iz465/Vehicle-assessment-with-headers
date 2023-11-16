@@ -18,6 +18,7 @@ users information;
 policyUsers policyInformation;
 renewalUsers renewalInformation;
 claimUsers claimInformation;
+benefitsUsers benefitsInformation;
 map <string, users> specific;
 map <string, policyUsers> specificPolicy;
 map <string, renewalUsers> specificRenewal;
@@ -42,11 +43,16 @@ extern int code;
 extern int card;
 extern string date;
 extern string description;
+extern int newDiscount;
+extern int multiDiscount;
+extern int renewalDiscount;
+extern int reviewDiscount;
 
 vector <users> usersVector;
 vector <policyUsers> policyVector;
 vector <renewalUsers> renewalVector;
 vector <claimUsers> claimVector;
+vector <benefitsUsers> benefitsVector;
 
 int counter = 0;
 string line;
@@ -144,7 +150,7 @@ void dataRenewal() {
     myfile.open("renewal.txt", ios::app);
     if (myfile.is_open()) {
 
-        myfile << username << ',' << card << ',' << code << endl;
+        myfile << username << ',' << card << ',' << code << ',' << price << endl;
 
     }
     myfile.close();
@@ -163,8 +169,9 @@ void renewalStruct() {
             getline(currentline, renewalInformation.username, ',');
             getline(currentline, renewalInformation.card, ',');
             getline(currentline, renewalInformation.code, ',');
-           
-
+            getline(currentline, renewalInformation.price, ',');
+            
+         
             specificRenewal.insert({ renewalInformation.username, renewalInformation });
             renewalVector.push_back(renewalInformation);
         }
@@ -204,5 +211,38 @@ void claimStruct() {
     }
     myfile.close();
 
+
+}
+
+
+void dataBenefits() {
+    myfile.open("benefits.txt", ios::out);
+    if (myfile.is_open()) {
+
+        myfile << newDiscount << ',' << multiDiscount << ',' << renewalDiscount << ',' << reviewDiscount << endl;
+
+    }
+    myfile.close();
+
+}
+
+void benefitsStruct() {
+    myfile.open("benefits.txt", ios::in);
+    if (myfile.is_open()) {
+        while (getline(myfile, line)) {
+
+            stringstream currentline;
+            currentline.str(line);
+            getline(currentline, benefitsInformation.newDiscount, ',');
+            getline(currentline, benefitsInformation.multiDiscount, ',');
+            getline(currentline, benefitsInformation.renewalDiscount, ',');
+            getline(currentline, benefitsInformation.reviewDiscount, ',');
+
+
+        
+            benefitsVector.push_back(benefitsInformation);
+        }
+    }
+    myfile.close();
 
 }

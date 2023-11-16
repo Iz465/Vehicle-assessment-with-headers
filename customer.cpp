@@ -11,6 +11,7 @@
 #include "renewal.h"
 #include "benefits.h"
 #include "MainMenu.h"
+#include "checkout.h"
 
 using namespace std;
 
@@ -92,7 +93,8 @@ void customer_Menu() {
     cout << "2. Claim registration" << endl;
     cout << "3. Renewal" << endl;
     cout << "4. Benefits of NZ insurance" << endl;
-    cout << "5. Exit to Main Menu" << endl;
+    cout << "5. Checkout" << endl;
+    cout << "6. Exit to Main Menu" << endl;
     cin >> answer;
     system("cls");
     std::cout << colors::bold << colors::red;
@@ -102,7 +104,8 @@ void customer_Menu() {
       case 2: claim(); break;
       case 3: renewal(); break;
       case 4: benefits(); break;
-      case 5: start(); break;
+      case 5: checkingOut(); break;
+      case 6: start(); break;
 
     }
 

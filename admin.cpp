@@ -23,8 +23,12 @@ using namespace std;
  extern map <string, policyUsers> specificPolicy;
  extern vector <claimUsers> claimVector;
  extern map <string, claimUsers> specificClaim;
+ extern vector <benefitsUsers> benefitsVector;
  int counting = 0;
-
+ int newDiscount = 0;
+ int multiDiscount = 0;
+ int renewalDiscount = 0;
+ int reviewDiscount = 0;
 char administrator;
 
 void admin_process() {
@@ -99,7 +103,7 @@ void renewalReport() {
     cout << "Below shows all users who have renewed their insurance" << endl;
     for (auto i : renewalVector) {
         countingNum();
-        cout << "Username: " << i.username << endl;
+        cout << "Username: " << i.username << " | renewal applied for: " << endl;
 
     }
     
@@ -117,6 +121,41 @@ void claimReport() {
         countingNum();
         cout << "Username: " << i.username << " | Date of claim: " << i.date << endl;
         cout << "Description of claim: " << i.description << endl << endl;
+    }
+}
+
+void discountReport() {
+    benefitsStruct();
+    cout << "Special Discounts" << endl << endl;
+    cout << colors::yellow;
+    cout << "Here you can decide the % for our discounts" << endl << endl;
+    
+    for (auto i : benefitsVector) {
+        countingNum();
+        cout << "These are our current discount prices" << endl << endl;
+        cout << "New Signee Discounts = " << i.newDiscount << "%" << endl;
+        cout << "Multi Policy Discounts = " << i.multiDiscount << "%" << endl;
+        cout << "Renewal Discounts = " << i.renewalDiscount << "%" << endl;
+        cout << "Review Discounts = " << i.reviewDiscount << "%" << endl;
+        
+    }
+
+    cout << "Would you like to update the discounts?(1. = Yes | 2. = No) ";
+    cin >> answer;
+
+    if (answer == 1) {
+        system("cls");
+        cout << "New Sign-Up Discounts % = "; cin >> newDiscount;
+        cout << "Multi Policy Discounts % = "; cin >> multiDiscount;
+        cout << "Renewal Discount % = "; cin >> renewalDiscount;
+        cout << "Discount for reviewing our Insurance % = "; cin >> reviewDiscount;
+        dataBenefits();
+        system("cls");
+        cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
+        cout << "Discounts have been updated. Thank you" << endl << endl;
+    }
+    else {
+
     }
 }
 
@@ -147,7 +186,7 @@ void admin() {
     case 2: claimReport(); break;
     case 3: renewalReport(); break;
     case 4: registrationReport();  break;
-    case 5: break;
+    case 5: discountReport();  break;
     case 0: start(); break;
     }
     options("admin");

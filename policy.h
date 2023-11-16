@@ -7,4 +7,4 @@ void rates();
 void quote();
 void policy_answer();
 void vehicle_data();
-void policy_registration();
+void policy_registration(); 

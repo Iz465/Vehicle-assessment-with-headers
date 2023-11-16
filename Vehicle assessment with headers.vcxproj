@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="admin.cpp" />
     <ClCompile Include="benefits.cpp" />
+    <ClCompile Include="checkout.cpp" />
     <ClCompile Include="claim.cpp" />
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="info.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="admin.h" />
     <ClInclude Include="benefits.h" />
+    <ClInclude Include="checkout.h" />
     <ClInclude Include="claim.h" />
     <ClInclude Include="colors.hpp" />
     <ClInclude Include="customer.h" />
@@ -154,6 +156,7 @@
     <ClInclude Include="userData.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="benefits.txt" />
     <Text Include="claim.txt" />
     <Text Include="insurance.txt" />
     <Text Include="policy.txt" />

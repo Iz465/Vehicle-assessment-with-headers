@@ -7,6 +7,8 @@
 #include "admin.h"
 #include "policy.h"
 #include "info.h"
+
+
 using namespace std;
 
   int answer;
@@ -27,6 +29,7 @@ void start() {
     cout << "2. Customer Login" << endl;
     cout << "3. Administrator Login" << endl;
     cout << "4. Insurance Company Info" << endl;
+    cout << "5. Exit" << endl;
     cin >> answer;
     system("cls");
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
@@ -35,6 +38,7 @@ void start() {
     case 2:customer(); break;
     case 3:adminLogin(); break;
     case 4:info(); break;
+    case 5: exit(0); break;
     }
 
 }

@@ -133,4 +133,5 @@ void policy_registration() {
     cout << "Vehicle Type: " << specificPolicy[username].vehicleType << endl;
     cout << "Policiy you have applied for: " << specificPolicy[username].policyType << endl;
     cout << "The Price for the insurance you have requested: $" << specificPolicy[username].price << " monthly and $" << specificPolicy[username].yearlyPrice  << " yearly" << endl;
+
 }

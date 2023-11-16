@@ -9,3 +9,5 @@ void dataRenewal();
 void renewalStruct();
 void dataClaim();
 void claimStruct();
+void dataBenefits();
+void benefitsStruct();
