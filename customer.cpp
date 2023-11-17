@@ -84,6 +84,9 @@ void passwordCensor() {
 void customer_Menu() {
     system("cls");
 
+    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Logging in.....";
+    Sleep(1500);
+    system("cls");
 
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
     std::cout << colors::bold << colors::red;

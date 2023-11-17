@@ -6,6 +6,7 @@
 #include <string>
 #include "userData.h"
 #include <cstdlib>
+#include <Windows.h>
 using namespace std;
 
  string first;
@@ -68,7 +69,12 @@ void registration() {
     srand(time(0));
    policy_number = rand() % 10000;
     data();
- 
+    system("cls");
+    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
+    cout << "Registering your account...";
+    Sleep(1500);
+
     start();
+
 
 }

@@ -30,7 +30,9 @@ int theft = 50;
 int carCrash = 60;
 int disastor = 50;
 string policyType;
+
 int yearlyPrice;
+int policyCount = 0;
 
  void policy() {
      cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Policy" << endl << endl;
@@ -80,6 +82,26 @@ void rates() {
 
 }
 
+
+void policy_answer(int a) {
+    cout << "Which Policy are you applying for? 1. = Fire. 2. = Theft. 3. = Car Crash. 4. = Natural Disastor ";
+    cin >> answer;
+        switch (answer) {
+
+        case 1: chosenPolicy = fire; policyType = "Fire"; break;
+        case 2: chosenPolicy = theft; policyType = "Theft"; break;
+        case 3: chosenPolicy = carCrash; policyType = "Car Crash"; break;
+        case 4: chosenPolicy = disastor; policyType = "Natural Disastor"; break;
+        }
+    
+}
+
+
+
+
+
+
+
 void quote() {
     cout << "Vehicle Insurance Quote" << endl << endl << endl << endl;
     cout << "What type of vehicle do you have? 1. = Motorbike. 2. = Car. 3. = Truck. 4. = Boat ";
@@ -91,8 +113,8 @@ void quote() {
     case 4: chosenVehicle = boat; vehicleType = "Boat"; break;
     }
 
-    policy_answer();
-
+    policy_answer(policyCount);
+    
 
 
     vehicle_data();
@@ -101,16 +123,8 @@ void quote() {
 
 }
 
-void policy_answer() {
-    cout << "Which Policy are you applying for? 1. = Fire. 2. = Theft. 3. = Car Crash. 4. = Natural Disastor ";
-    cin >> answer;
-    switch (answer) {
-    case 1: chosenPolicy = fire; policyType = "Fire"; break;
-    case 2: chosenPolicy = theft; policyType = "Theft"; break;
-    case 3: chosenPolicy = carCrash; policyType = "Car Crash"; break;
-    case 4: chosenPolicy = disastor; policyType = "Natural Disastor"; break;
-    }
-}
+
+
 
 void vehicle_data() {
     price += chosenVehicle + chosenPolicy;

@@ -38,6 +38,7 @@ struct renewalUsers {
     string card;
     string code;
     string price;
+    string count;
 };
 
 struct claimUsers {

@@ -9,6 +9,7 @@
 #include "struct.h"
 #include <vector>
 
+
 using namespace std;
 fstream myfile;
 
@@ -47,6 +48,7 @@ extern int newDiscount;
 extern int multiDiscount;
 extern int renewalDiscount;
 extern int reviewDiscount;
+extern int renewalCount;
 
 vector <users> usersVector;
 vector <policyUsers> policyVector;
@@ -150,7 +152,7 @@ void dataRenewal() {
     myfile.open("renewal.txt", ios::app);
     if (myfile.is_open()) {
 
-        myfile << username << ',' << card << ',' << code << ',' << price << endl;
+        myfile << username << ',' << card << ',' << code << ',' << price << ',' << renewalCount << endl;
 
     }
     myfile.close();
@@ -170,6 +172,7 @@ void renewalStruct() {
             getline(currentline, renewalInformation.card, ',');
             getline(currentline, renewalInformation.code, ',');
             getline(currentline, renewalInformation.price, ',');
+            getline(currentline, renewalInformation.count, ',');
             
          
             specificRenewal.insert({ renewalInformation.username, renewalInformation });

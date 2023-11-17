@@ -17,13 +17,14 @@ int oneYear = 400;
 int threeYear = 1000;
 extern int answer;
 extern int price;
-
+int renewalCount = 0;
 
 void renewalPricing(int a) {
     if (a == 1) {
         price += oneYear;
     }
     else if (a == 2) {
+        renewalCount++;
         price += threeYear;
     }
 }

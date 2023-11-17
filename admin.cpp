@@ -103,8 +103,14 @@ void renewalReport() {
     cout << "Below shows all users who have renewed their insurance" << endl;
     for (auto i : renewalVector) {
         countingNum();
-        cout << "Username: " << i.username << " | renewal applied for: " << endl;
-
+        cout << "Username: " << i.username << " | renewal time applied for: ";
+        if (i.count == "0") {
+            cout << "One year " << endl;
+        }
+        else {
+            cout << "Three years" << endl;
+        }
+      
     }
     
 
@@ -160,6 +166,10 @@ void discountReport() {
 }
 
 void admin() {
+    system("cls");
+
+    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Logging in.....";
+    Sleep(1500);
     system("cls");
     cout << colors::red;
     cout << "\t" << "\t" << "\t" << "\t" << "Welcome " << username << endl << endl;
