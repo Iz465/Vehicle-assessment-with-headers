@@ -30,48 +30,51 @@ void renewalPricing(int a) {
 }
 
 void renewal() {
-    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
-    cout << "Renewal" << endl << endl;
-    std::cout << colors::bold << colors::yellow;
-    cout << "This is where you can renew your insurance in case it goes out of date, causing your insurance to cancel" << endl << endl;
-    cout << "Below are the details associated with the account " << specific[username].username << endl << endl;
-    cout << "Name: " << specific[username].first << " " << specific[username].last << endl;
-    cout << "Policy Number: " << specific[username].policy_number << endl;    
-    cout << "Contact Details: " << specific[username].phone << endl << endl;
+   
+    cout << "Renewal" << endl << endl; spacing(); yellow();
+
+    cout << "This is where you can renew your insurance in case it goes out of date, causing your insurance to cancel" << endl << endl; spacing(); red();
+    cout << "Below are the details associated with the account " << specific[username].username << endl << endl; spacing(); yellow();
+    cout << "Name: " << specific[username].first << " " << specific[username].last << endl; spacing(); red();
+    cout << "Policy Number: " << specific[username].policy_number << endl;    spacing(); yellow();
+    cout << "Contact Details: " << specific[username].phone << endl << endl; spacing(); red();
     
 
    
-    cout << "Insurance renewed for one year = $" << oneYear << " | Three years = $" << threeYear << endl;
+    cout << "Insurance renewed for one year = $" << oneYear << " | Three years = $" << threeYear << endl; spacing(); yellow();
 
-    cout << "Do you wish to renew your insurance?(1. = Yes | 2. = No)" << endl;
+    cout << "Do you wish to renew your insurance?(1. = Yes | 2. = No)" << endl; spacing(); red();
     cin >> answer;
-    
+    spacing(); yellow();
     if (answer == 1) {
-        cout << "Do you wish to renew for one or three years?(1. = One | 2. = Three)" << endl;
+        cout << "Do you wish to renew for one or three years?(1. = One | 2. = Three)" << endl; spacing(); red();
         cin >> answer;
-        renewalPricing(answer);
+        renewalPricing(answer); spacing(); yellow();
         cout << "Enter 8 digit credit card number: ";
 
         cin >> card;
         while (card < 10000000 || card > 99999999) {
-            cout << "Incorrect" << endl;
-            cout << "Enter a 8 digit credit card number: ";
+            spacing(); red();
+            cout << "Incorrect" << endl; spacing(); yellow();
+            cout << "Enter a 8 digit credit card number: "; red();
             cin >> card;
-            cout << endl;
+            
         }
 
         cin.ignore();
+        spacing();
+        cout << "Three digit credit card code: "; yellow();
 
-        cout << "Three digit credit card code: ";
-
-        cin >> code;
+        cin >> code; 
         while (code < 100 || code > 999) {
-            cout << "Incorrect" << endl;
-            cout << "Enter a Three digit card code: ";
+            spacing(); red();
+            cout << "Incorrect" << endl; spacing(); yellow();
+            cout << "Enter a Three digit card code: "; red();
             cin >> code;
             cout << endl;
         }
-        cout << "Thank you for your time. Your insurance will be updated once it needs renewed" << endl << endl;
+        spacing(); yellow();
+        cout << "Thank you for your time. Your insurance will be updated once it needs renewed";
         dataRenewal();
     }
     

@@ -12,6 +12,7 @@
 #include "benefits.h"
 #include "MainMenu.h"
 #include "checkout.h"
+#include "review.h"
 
 using namespace std;
 
@@ -31,7 +32,11 @@ void customer() {
     renewalStruct();
     loggingin();
     
-
+    system("cls");
+    cout << endl << endl;
+    spacing(); cout << "Logging in.....";
+    Sleep(1500);
+    system("cls");
     customer_Menu();
 
 
@@ -46,8 +51,8 @@ void loggingin() {
     
     
     cout << "Enter Username: ";
-    cin >> username;
-    passwordCensor();
+    cin >> username; spacing();  yellow();
+    passwordCensor(); spacing();  red();
 
     while (username != specific[username].username || pass != specific[username].password) {
         count++;
@@ -56,10 +61,10 @@ void loggingin() {
             exit(0);
         }
 
-        cout << "WRONG" << endl;
-        cout << "Enter Username: ";
-        cin >> username;
-        passwordCensor();
+        cout << "WRONG" << endl; spacing();  yellow();
+        cout << "Enter Username: "; 
+        cin >> username; spacing();  red();
+        passwordCensor(); spacing();  yellow();
     }
 
 }
@@ -81,34 +86,33 @@ void passwordCensor() {
 
 }
 
+
+
 void customer_Menu() {
-    system("cls");
 
-    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Logging in.....";
-    Sleep(1500);
     system("cls");
-
-    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
-    std::cout << colors::bold << colors::red;
-    cout << "Welcome back " << username << ". Please select one of the following options" << endl << endl;
-    std::cout << colors::bold << colors::yellow;
-    cout << "1. Our Policy" << endl;
-    cout << "2. Claim registration" << endl;
-    cout << "3. Renewal" << endl;
-    cout << "4. Benefits of NZ insurance" << endl;
-    cout << "5. Checkout" << endl;
-    cout << "6. Exit to Main Menu" << endl;
+    cout << endl << endl; spacing(); red();
+    
+    cout << "Welcome back " << username << ". Please select one of the following options" << endl << endl; spacing(); yellow();
+    cout << "1. Our Policy" << endl; spacing();  red();
+    cout << "2. Claim registration" << endl; spacing();  yellow();
+    cout << "3. Renewal" << endl; spacing();  red();
+    cout << "4. Benefits of NZ insurance" << endl; spacing();  yellow();
+    cout << "5. Checkout" << endl; spacing();  red();
+    cout << "6. Leave a Review" << endl; spacing(); yellow();
+    cout << "7. Exit to Main Menu" << endl; spacing(); red();
     cin >> answer;
     system("cls");
-    std::cout << colors::bold << colors::red;
- //   cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
+    cout << endl << endl; spacing();
+
     switch (answer) {
       case 1: policy(); break;
       case 2: claim(); break;
       case 3: renewal(); break;
       case 4: benefits(); break;
       case 5: checkingOut(); break;
-      case 6: start(); break;
+      case 6: review();
+      case 7: start(); break;
 
     }
 

@@ -63,13 +63,13 @@ void discounts() {
 void checkingOut() {
 	
 
-	cout << "Checkout" << endl << endl;
-	cout << "The current price for your insurance claim is $"; policyPrice();
-	cout << "The current price for your renewal is $"; renewalPrice();
+	cout << "Checkout" << endl << endl; spacing(); yellow();
+	cout << "The current price for your insurance claim is $"; policyPrice(); spacing(); red();
+	cout << "The current price for your renewal is $"; renewalPrice(); spacing(); yellow();
 	int final = a + b;
-	cout << "The overall price is $" << final << endl;
+	cout << "The overall price is $" << final << endl; spacing(); red();
 
-	cout << "With discounts the price becomes $"; discounts();
+	cout << "With discounts the price becomes $"; discounts(); spacing(); yellow();
 	
 
 	options("customer");

@@ -7,6 +7,7 @@
 #include <map>
 #include "struct.h"
 #include "userData.h"
+#include "customer.h"
 
 using namespace std;
 
@@ -35,50 +36,52 @@ int yearlyPrice;
 int policyCount = 0;
 
  void policy() {
-     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t" << "Policy" << endl << endl;
+     cout << endl << endl; spacing();
+     cout << "Policy" << endl << endl; spacing(); yellow();
     
-    std::cout << colors::bold << colors::blue;
-    cout << endl << endl;
-    cout << "1. What our insurance covers your vehicles from." << endl << endl;
-    cout << "2. Insurance rates " << endl << endl;
-    cout << "3. Company Quote " << endl << endl;
-    cout << "4. Policy Registration" << endl << endl;
-    cout << "0. Main Menu" << endl << endl;
+    
+    
+     cout << "1. What our insurance covers your vehicles from." << endl; spacing(); yellow();
+    cout << "2. Insurance rates " << endl; spacing(); yellow();
+    cout << "3. Company Quote " << endl; spacing(); yellow();
+    cout << "4. Policy Registration" << endl; spacing(); yellow();
+    cout << "0. Customer Menu" << endl; spacing(); yellow(); 
     cin >> answer;
     system("cls");
-    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
+    cout << endl << endl; spacing(); red();
     switch (answer) {
     case 1: policy_list(); break;
     case 2: rates(); break;
     case 3: quote(); break;
     case 4: policy_registration(); break;
-    case 0: start(); break;
+    case 0: customer_Menu(); break;
     }
 
     void admin_process();
 
     
     options("policy");
+   
 }
 
 
 void policy_list() {
-    cout << "Our list of what our insurance provides protection for" << endl << endl;
-    cout << "Fire = $50" << endl;
-    cout << "Theft = $50" << endl;
-    cout << "Car Crash = $60" << endl;
-    cout << "Natural Disastor = $50" << endl;
+    cout << "Our list of what our insurance provides protection for" << endl << endl; spacing(); yellow();
+    cout << "Fire = $50" << endl; spacing(); red();
+    cout << "Theft = $50" << endl; spacing(); yellow();
+    cout << "Car Crash = $60" << endl; spacing(); red();
+    cout << "Natural Disastor = $50" << endl; spacing(); yellow();
 
 
 
 
 }
 void rates() {
-    cout << "Insurance Rates" << endl << endl;
-    cout << "Motorbikes/Scooters: Monthly = $70" << "\t" << "Yearly = $700" << endl << endl;
-    cout << "Cars: Monthly = $80" << "\t" << "Yearly = $800" << endl << endl;
-    cout << "Trucks: Monthly = $90" << "\t" << "Yearly = $900" << endl << endl;
-    cout << "Boats: Monthly = $100" << "\t" << "Yearly = $1000" << endl << endl;
+    cout << "Insurance Rates" << endl << endl; spacing(); yellow();
+    cout << "Motorbikes/Scooters: Monthly = $70" << "\t" << "Yearly = $700" << endl; spacing(); red();
+    cout << "Cars: Monthly = $80" << "\t" << "Yearly = $800" << endl; spacing(); red();
+    cout << "Trucks: Monthly = $90" << "\t" << "Yearly = $900" << endl; spacing(); red();
+    cout << "Boats: Monthly = $100" << "\t" << "Yearly = $1000" << endl; spacing(); red();
 
 }
 
@@ -103,16 +106,17 @@ void policy_answer(int a) {
 
 
 void quote() {
-    cout << "Vehicle Insurance Quote" << endl << endl << endl << endl;
-    cout << "What type of vehicle do you have? 1. = Motorbike. 2. = Car. 3. = Truck. 4. = Boat ";
+    cout << "Vehicle Insurance Quote" << endl << endl << endl << endl; spacing(); yellow();
+    cout << "What type of vehicle do you have? 1. = Motorbike. 2. = Car. 3. = Truck. 4. = Boat "; 
     cin >> answer;
+    cout << endl << endl; spacing(); red();
     switch (answer) {
     case 1: chosenVehicle = motorbike; vehicleType = "Motorbike"; break;
     case 2: chosenVehicle = car; vehicleType = "Car"; break;
     case 3: chosenVehicle = truck; vehicleType = "Truck"; break;
     case 4: chosenVehicle = boat; vehicleType = "Boat"; break;
     }
-
+    
     policy_answer(policyCount);
     
 
@@ -135,17 +139,17 @@ void vehicle_data() {
 void policy_registration() {
     
     
-    cout << "Below are the details associated with the account " << specificPolicy[username].username << endl;
-    cout << "Policy Number: " << specific[username].policy_number << endl;
-    cout << "Name: " << specific[username].first << " " << specific[username].last << endl;
-    cout << "DOB: " << specific[username].birth << endl;
-    cout << "Gender: " << specific[username].gender << endl;
-    cout << "Phone Number: " << specific[username].phone << endl;
-    cout << "Email: " << specific[username].email << endl;
-    cout << "Address: " << specific[username].address << endl;
-    cout << "Vehicle Code: " << specific[username].vehicle << endl;
-    cout << "Vehicle Type: " << specificPolicy[username].vehicleType << endl;
-    cout << "Policiy you have applied for: " << specificPolicy[username].policyType << endl;
-    cout << "The Price for the insurance you have requested: $" << specificPolicy[username].price << " monthly and $" << specificPolicy[username].yearlyPrice  << " yearly" << endl;
+    cout << "Below are the details associated with the account " << specificPolicy[username].username << endl << endl; spacing(); yellow();
+    cout << "Policy Number: " << specific[username].policy_number << endl; spacing(); red();
+    cout << "Name: " << specific[username].first << " " << specific[username].last << endl; spacing(); yellow();
+    cout << "DOB: " << specific[username].birth << endl; spacing(); red();
+    cout << "Gender: " << specific[username].gender << endl; spacing(); yellow();
+    cout << "Phone Number: " << specific[username].phone << endl; spacing(); red();
+    cout << "Email: " << specific[username].email << endl; spacing(); yellow();
+    cout << "Address: " << specific[username].address << endl; spacing(); red();
+    cout << "Vehicle Code: " << specific[username].vehicle << endl; spacing(); yellow();
+    cout << "Vehicle Type: " << specificPolicy[username].vehicleType << endl; spacing(); red();
+    cout << "Policiy you have applied for: " << specificPolicy[username].policyType << endl; spacing(); yellow();
+    cout << "The Price for the insurance you have requested: $" << specificPolicy[username].price << " monthly and $" << specificPolicy[username].yearlyPrice << " yearly";
 
 }

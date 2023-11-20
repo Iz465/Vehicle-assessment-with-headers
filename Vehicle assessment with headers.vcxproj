@@ -137,6 +137,7 @@
     <ClCompile Include="policy.cpp" />
     <ClCompile Include="registration.cpp" />
     <ClCompile Include="renewal.cpp" />
+    <ClCompile Include="review.cpp" />
     <ClCompile Include="userData.cpp" />
     <ClCompile Include="Vehicle assessment with headers.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="policy.h" />
     <ClInclude Include="registration.h" />
     <ClInclude Include="renewal.h" />
+    <ClInclude Include="review.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="userData.h" />
   </ItemGroup>

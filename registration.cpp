@@ -26,42 +26,42 @@ using namespace std;
 
 
 void registration() {
-
-    cout << "To sign up please fill in the following details" << endl << endl;
+    
+    cout << "To sign up please fill in the following details" << endl << endl; yellow();
     cin.ignore();
-
+    spacing(); 
     cout << "First Name: ";
-    getline(cin, first);
+    getline(cin, first); spacing(); red();
     cout << "Last Name: ";
-    getline(cin, last);
+    getline(cin, last); spacing(); yellow();
     cout << "Date of Birth: ";
-    getline(cin, birth);
+    getline(cin, birth); spacing(); red();
     cout << "Gender: ";
-    getline(cin, gender);
+    getline(cin, gender); spacing(); yellow();
     cout << "Phone Number: ";
-    getline(cin, phone);
+    getline(cin, phone); spacing(); red();
     cout << "Email: ";
-    getline(cin, email);
+    getline(cin, email); spacing(); yellow();
     cout << "Home Address: ";
-    getline(cin, address);
+    getline(cin, address); spacing(); red();
     cout << "Vehicle Registration Number: ";
-    getline(cin, vehicle);
+    getline(cin, vehicle); spacing(); yellow();
     cout << "Username: ";
-    getline(cin, username);
+    getline(cin, username); spacing(); red();
     cout << "Password: ";
-    getline(cin, password);
+    getline(cin, password); spacing(); yellow();
     cout << "Please confirm your password: ";
-    getline(cin, password1);
+    getline(cin, password1); spacing(); red();
 
 
 
     while (password1 != password) {
-        cout << "Error! Passwords not matching" << endl;
-        cout << "Password: ";
+        cout << "Error! Passwords not matching" << endl; spacing(); yellow();
+        cout << "Password: "; spacing(); red();
 
         cin >> password;
 
-        cout << "Please confirm your password: ";
+        cout << "Please confirm your password: "; spacing(); yellow();
         cin >> password1;
     }
 

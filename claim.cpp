@@ -15,26 +15,26 @@ extern string username;
 string date;
 string description;
 void claim() {
-    cout << "Claim" << endl << endl;
-    std::cout << colors::bold << colors::blue;
-    cout << "Here you can register for your claim" << endl;
-    cout << "Below are the details associated with the account " << specific[username].username << endl << endl;
-    cout << "Name: " << specific[username].first << " " << specific[username].last << endl;
-    cout << "Contact Details: " << specific[username].phone << endl;
-    cout << "Policy Number: " << specific[username].policy_number << endl;
+    cout << "Claim" << endl << endl; spacing(); yellow();
+    
+    cout << "Here you can register for your claim" << endl; spacing(); red();
+    cout << "Below are the details associated with the account " << specific[username].username << endl << endl; spacing(); yellow();
+    cout << "Name: " << specific[username].first << " " << specific[username].last << endl; spacing(); red();
+    cout << "Contact Details: " << specific[username].phone << endl; spacing(); yellow();
+    cout << "Policy Number: " << specific[username].policy_number << endl; spacing(); red();
    // cout << "Vehicle: " << specific[username].vehicleType << endl;
    // cout << "Insurance Claim Problem: " << specific[username].chosenPolicy << endl << endl;
     
-  //  cout << "Please give the date and a description of the " << specific[username].chosenPolicy << endl << endl;
-    cout << "Date: ";
+    cout << "Please give the date and description of the " << specificPolicy[username].policyType << endl<< endl; spacing(); yellow();
+    cout << "Please enter the date the " << specificPolicy[username].policyType << " occurred: "; red();
     cin.ignore();
-    getline(cin, date);
-    cout << "What caused the " << specificPolicy[username].policyType << "?" << endl;
-    getline(cin, description);
+    getline(cin, date); spacing(); 
+    cout << "What caused the " << specificPolicy[username].policyType << "?" << endl; spacing(); yellow();
+    getline(cin, description); 
     system("cls");
-    std::cout << colors::red;
+    cout << endl << endl; spacing();
     dataClaim();
-    cout << "\n" << endl << "\t" << "\t" << "We will review your claim. Thank you for your time" << endl;
+    cout << "We will review your claim. Thank you for your time" << endl; 
     
     options("customer");
 }

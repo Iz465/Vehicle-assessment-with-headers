@@ -13,30 +13,25 @@ using namespace std;
 
   int answer;
 
-  void title() {
 
-
-      cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t";
-      cout << " _____\n" << "\t" << "\t" << "\t" << "\t" << "\t"
-          "|_   _|\n" << "\t" << "\t" << "\t" << "\t" << "\t"
-          "  | |  _ __  ___ _   _ _ __ __ _ _ __   ___ ___\n" << "\t" << "\t" << "\t" << "\t" << "\t"
-          "  | | | '_ \\/ __| | | | '__/ _` | '_ \\ / __/ _ \\ \n" << "\t" << "\t" << "\t" << "\t" << "\t"
-          " _| |_| | | \\__ \\ |_| | | | (_| | | | | (_|  __/\n" << "\t" << "\t" << "\t" << "\t" << "\t"
-          "|_____|_| |_|___/\\__,_|_|  \\__,_|_| |_|\\___\\___|\n" << endl;
-
-
-
+  void spacing() {
+      cout << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
   }
 
+  void red() {
+      std::cout << colors::bold << colors::red;
+  }
 
-
+  void yellow() {
+       std::cout << colors::bold << colors::yellow;
+  }
 
 void start() {
 
 
     system("cls");
-    std::cout << colors::bold << colors::red;
-    title();
+    red();
+ 
 
                                                  
                         
@@ -45,20 +40,21 @@ void start() {
 
 
 
+    cout << endl << endl;
+    spacing();
 
+    cout << "Auckland Vehicle Insurance" << endl << endl;
 
-    // << "Birkenhead Vehicle Insurance" << endl << endl;
-
-
-    std::cout << colors::bold << colors::yellow;
-    cout << "1. Registration" << endl;
-    cout << "2. Customer Login" << endl;
-    cout << "3. Administrator Login" << endl;
-    cout << "4. Insurance Company Info" << endl;
-    cout << "5. Exit" << endl;
+    spacing();
+    yellow();
+    cout << "1. Registration" << endl; spacing(); red();
+    cout << "2. Customer Login" << endl; spacing(); yellow();
+    cout << "3. Administrator Login" << endl; spacing(); red();
+    cout << "4. Insurance Company Info" << endl; spacing(); yellow();
+    cout << "5. Exit" << endl; spacing(); red();
     cin >> answer;
     system("cls");
-    cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
+    cout << endl << endl; spacing(); 
     switch (answer) {
     case 1:registration(); break;
     case 2:customer(); break;
@@ -91,9 +87,9 @@ void normalSize() {
 
 void options(string a) {
 
-    cout << endl << endl;
+    cout << endl << endl; spacing();
     cout << colors::red;
-    cout << "0. Exit to " << a << " Menu" << endl;
+    cout << "0. Exit to " << a << " Menu" << endl; spacing();
     cin >> answer;
     
     switch (answer) {

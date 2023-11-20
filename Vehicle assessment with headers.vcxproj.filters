@@ -51,6 +51,9 @@
     <ClCompile Include="checkout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="review.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.hpp">
@@ -90,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="checkout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="review.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
