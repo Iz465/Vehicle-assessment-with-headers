@@ -49,8 +49,16 @@ struct claimUsers {
 };
 
 struct benefitsUsers {
+    string username;
     string newDiscount;
     string multiDiscount;
     string renewalDiscount;
     string reviewDiscount;
+};
+
+struct reviewUsers {
+    string username;
+    string answer;
+    string detailedReview;
+    string reviewCount;
 };

@@ -24,6 +24,6 @@ int main()
 }
 
 
-// Things that still need to be done: Finish off the review section - Add multi policy  - Add both the review and multi policy to the checkout 
+// Things that still need to be done: Add multi policy  - Add  multi policy to the checkout 
 // Remove card details from renewal and add it to checkout - Make it tidy
 // Start report

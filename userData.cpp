@@ -20,10 +20,13 @@ policyUsers policyInformation;
 renewalUsers renewalInformation;
 claimUsers claimInformation;
 benefitsUsers benefitsInformation;
+reviewUsers reviewInformation;
 map <string, users> specific;
 map <string, policyUsers> specificPolicy;
 map <string, renewalUsers> specificRenewal;
 map <string, claimUsers> specificClaim;
+map <string, benefitsUsers> specificBenefits;
+map <string, reviewUsers> specificReview;
 extern string first;
 extern string last;
 extern string birth;
@@ -48,13 +51,16 @@ extern int newDiscount;
 extern int multiDiscount;
 extern int renewalDiscount;
 extern int reviewDiscount;
-extern int renewalCount;
-
+extern string renewalCount;
+extern int answer;
+extern string reviewCount;
+extern string detailedReview;
 vector <users> usersVector;
 vector <policyUsers> policyVector;
 vector <renewalUsers> renewalVector;
 vector <claimUsers> claimVector;
 vector <benefitsUsers> benefitsVector;
+vector <reviewUsers> reviewVector;
 
 int counter = 0;
 string line;
@@ -222,7 +228,7 @@ void dataBenefits() {
     myfile.open("benefits.txt", ios::out);
     if (myfile.is_open()) {
 
-        myfile << newDiscount << ',' << multiDiscount << ',' << renewalDiscount << ',' << reviewDiscount << endl;
+        myfile << username << ',' << newDiscount << ',' << multiDiscount << ',' << renewalDiscount << ',' << reviewDiscount << endl;
 
     }
     myfile.close();
@@ -236,16 +242,48 @@ void benefitsStruct() {
 
             stringstream currentline;
             currentline.str(line);
+            getline(currentline, benefitsInformation.username, ',');
             getline(currentline, benefitsInformation.newDiscount, ',');
             getline(currentline, benefitsInformation.multiDiscount, ',');
             getline(currentline, benefitsInformation.renewalDiscount, ',');
             getline(currentline, benefitsInformation.reviewDiscount, ',');
 
 
-        
+            specificBenefits.insert({ benefitsInformation.username, benefitsInformation });
             benefitsVector.push_back(benefitsInformation);
         }
     }
     myfile.close();
 
+}
+
+void dataReview() {
+    myfile.open("review.txt", ios::app);
+    if (myfile.is_open()) {
+
+        myfile << username << ',' << answer << ',' << detailedReview << ',' << reviewCount << endl;
+
+    }
+    myfile.close();
+
+}
+
+void reviewStruct() {
+    myfile.open("review.txt", ios::in);
+    if (myfile.is_open()) {
+        while (getline(myfile, line)) {
+
+            stringstream currentline;
+            currentline.str(line);
+            getline(currentline, reviewInformation.username, ',');
+            getline(currentline, reviewInformation.answer, ',');
+            getline(currentline, reviewInformation.detailedReview, ',');
+            getline(currentline, reviewInformation.reviewCount, ',');
+
+
+            specificReview.insert({ reviewInformation.username, reviewInformation });
+            reviewVector.push_back(reviewInformation);
+        }
+    }
+    myfile.close();
 }

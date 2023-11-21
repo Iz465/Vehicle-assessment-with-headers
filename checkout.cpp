@@ -8,15 +8,27 @@
 using namespace std;
 
 extern string username;
-
+extern struct renewalUsers;
+extern struct users;
+extern struct reviewUsers;
+extern map <string, users> specific;
 extern map <string, policyUsers> specificPolicy;
 extern map <string, renewalUsers> specificRenewal;
+extern map <string, benefitsUsers> specificBenefits;
+extern map <string, reviewUsers> specificReview;
 extern vector <renewalUsers> renewalVector;
-int a;
-int b;
-int c;
-int d;
-int discountedPrice;
+extern benefitsUsers benefitsInformation;
+extern policyUsers policyInformation;
+extern reviewUsers reviewInformation;
+
+float newRenewalDiscount;
+float newReviewDiscount;
+float a;
+float b;
+float c;
+float d;
+float discountedPrice;
+float discountedAdded;
 
 void renewalPrice() {
 	if (specificRenewal[username].price != "") {
@@ -45,23 +57,46 @@ void policyPrice() {
 
 }
 
+
+
 void discounts() {
 
-	c = stoi(specificRenewal[username].count);
+	discountedPrice = a + b;
+	
 
-	if (c != 0) {
-		b = b * 0.8;
+	if (specificRenewal[username].count != "") {
+		
+		c = stoi(benefitsInformation.renewalDiscount);
+		newRenewalDiscount = c / 100;
+	
+		
+	}
+	else {
+		c = 0;
 	}
 
-	
-	discountedPrice = a + b;
-	cout << discountedPrice << endl;
+	if (specificReview[username].reviewCount == "true") {
 
+		d = stoi(benefitsInformation.reviewDiscount);
+		newReviewDiscount = d / 100;
+	
+
+
+	}
+	else {
+		d = 0;
+	}
+	discountedAdded = newRenewalDiscount + newReviewDiscount;
+	discountedPrice = discountedPrice - (discountedPrice * discountedAdded);
+
+	cout << discountedPrice << endl;
+	
 }
 
 
 void checkingOut() {
 	
+
 
 	cout << "Checkout" << endl << endl; spacing(); yellow();
 	cout << "The current price for your insurance claim is $"; policyPrice(); spacing(); red();

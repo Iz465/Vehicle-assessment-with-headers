@@ -24,6 +24,8 @@ using namespace std;
  extern vector <claimUsers> claimVector;
  extern map <string, claimUsers> specificClaim;
  extern vector <benefitsUsers> benefitsVector;
+ extern map <string, reviewUsers> specificReview;
+ extern vector <reviewUsers> reviewVector;
  int counting = 0;
  int newDiscount = 0;
  int multiDiscount = 0;
@@ -131,6 +133,24 @@ void claimReport() {
     }
 }
 
+void reviewReport() {
+    reviewVector.clear();
+    reviewStruct();
+    cout << "Review Report" << endl << endl; spacing(); yellow();
+    cout << "Below shows all users who have submitted a report" << endl << endl;
+    for (auto i : reviewVector) {
+        countingNum();
+        spacing();
+        cout << "Username: " << i.username << " | Review Rating: " << i.answer << endl; spacing();
+        cout << "Description of their review: " << i.detailedReview << endl << endl;
+    }
+
+
+
+}
+
+
+
 void discountReport() {
     benefitsStruct();
     cout << "Special Discounts" << endl << endl; spacing(); yellow();
@@ -175,9 +195,10 @@ void admin() {
     cout << "1. Customer Report " << endl; spacing(); yellow();
     cout << "2. Claim Report " << endl; spacing(); red();
     cout << "3. Renewal Report " << endl; spacing(); yellow();
-    cout << "4. Weekly New Registration Report " << endl;   spacing(); red();
-    cout << "5. Updated Policy Information and Special Discounts " << endl; spacing(); yellow();
-    cout << "0. Main Menu" << endl; spacing(); red();
+    cout << "4. Registration Report " << endl; spacing(); red();
+    cout << "5. Review Report" << endl; spacing(); yellow();
+    cout << "6. Updated Policy Information and Special Discounts " << endl; spacing(); red();
+    cout << "0. Main Menu" << endl; spacing(); yellow();
     cin >> answer;
     system("cls");
 
@@ -187,7 +208,8 @@ void admin() {
     case 2: claimReport(); break;
     case 3: renewalReport(); break;
     case 4: registrationReport();  break;
-    case 5: discountReport();  break;
+    case 5: reviewReport();  break;
+    case 6: discountReport(); break;
     case 0: start(); break;
     }
     options("admin");

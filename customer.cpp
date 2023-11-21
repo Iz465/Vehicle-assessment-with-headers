@@ -30,6 +30,8 @@ void customer() {
     makingStruct();
     policyStruct();
     renewalStruct();
+    benefitsStruct();
+    reviewStruct();
     loggingin();
     
     system("cls");

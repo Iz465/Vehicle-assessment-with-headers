@@ -11,3 +11,5 @@ void dataClaim();
 void claimStruct();
 void dataBenefits();
 void benefitsStruct();
+void dataReview();
+void reviewStruct();

@@ -17,14 +17,14 @@ int oneYear = 400;
 int threeYear = 1000;
 extern int answer;
 extern int price;
-int renewalCount = 0;
+string renewalCount;
 
 void renewalPricing(int a) {
     if (a == 1) {
         price += oneYear;
     }
     else if (a == 2) {
-        renewalCount++;
+        renewalCount = "true";
         price += threeYear;
     }
 }
@@ -32,11 +32,11 @@ void renewalPricing(int a) {
 void renewal() {
    
     cout << "Renewal" << endl << endl; spacing(); yellow();
-
+    
     cout << "This is where you can renew your insurance in case it goes out of date, causing your insurance to cancel" << endl << endl; spacing(); red();
     cout << "Below are the details associated with the account " << specific[username].username << endl << endl; spacing(); yellow();
     cout << "Name: " << specific[username].first << " " << specific[username].last << endl; spacing(); red();
-    cout << "Policy Number: " << specific[username].policy_number << endl;    spacing(); yellow();
+    cout << "Policy Number: " << specific[username].policy_number << endl; spacing(); yellow();
     cout << "Contact Details: " << specific[username].phone << endl << endl; spacing(); red();
     
 
@@ -47,6 +47,7 @@ void renewal() {
     cin >> answer;
     spacing(); yellow();
     if (answer == 1) {
+        
         cout << "Do you wish to renew for one or three years?(1. = One | 2. = Three)" << endl; spacing(); red();
         cin >> answer;
         renewalPricing(answer); spacing(); yellow();
