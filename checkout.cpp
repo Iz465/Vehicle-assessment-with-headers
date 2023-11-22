@@ -20,7 +20,9 @@ extern vector <renewalUsers> renewalVector;
 extern benefitsUsers benefitsInformation;
 extern policyUsers policyInformation;
 extern reviewUsers reviewInformation;
-
+extern int answer;
+int card;
+int code;
 float newRenewalDiscount;
 float newReviewDiscount;
 float a;
@@ -89,8 +91,38 @@ void discounts() {
 	discountedAdded = newRenewalDiscount + newReviewDiscount;
 	discountedPrice = discountedPrice - (discountedPrice * discountedAdded);
 
-	cout << discountedPrice << endl;
+	cout << discountedPrice << endl << endl;
 	
+}
+
+void cardDetails() {
+	if (answer == 1) {
+		spacing(); red();
+		cout << "Enter 8 digit credit card number: ";
+
+		cin >> card;
+		while (card < 10000000 || card > 99999999) {
+			spacing(); red();
+			cout << "Incorrect" << endl; spacing(); yellow();
+			cout << "Enter a 8 digit credit card number: "; red();
+			cin >> card;
+
+		}
+
+		cin.ignore();
+		spacing();
+		cout << "Three digit credit card code: "; yellow();
+
+		cin >> code;
+		while (code < 100 || code > 999) {
+			spacing(); red();
+			cout << "Incorrect" << endl; spacing(); yellow();
+			cout << "Enter a Three digit card code: "; red();
+			cin >> code;
+			cout << endl;
+		}
+		spacing(); yellow();
+	}
 }
 
 
@@ -105,7 +137,10 @@ void checkingOut() {
 	cout << "The overall price is $" << final << endl; spacing(); red();
 
 	cout << "With discounts the price becomes $"; discounts(); spacing(); yellow();
-	
+
+	cout << "Do you wish to checkout?(1.= Yes | 2. = No)"; 
+	cin >> answer; 
+	cardDetails();
 
 	options("customer");
 }

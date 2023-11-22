@@ -30,6 +30,7 @@ string reviewCount;
             cout << endl << endl; spacing();
             cout << "Thank you for your review. We will analyse it to see how we can improve" << endl;
             dataReview();
+            reviewStruct();
         }
         else {
 

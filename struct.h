@@ -10,6 +10,7 @@ struct policyUsers {
     string policyType;
     string price;
     string yearlyPrice;
+    string policyType2;
 
 
 };
@@ -35,8 +36,6 @@ struct users {
 
 struct renewalUsers {
     string username;
-    string card;
-    string code;
     string price;
     string count;
 };

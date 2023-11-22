@@ -69,6 +69,7 @@ void registration() {
     srand(time(0));
    policy_number = rand() % 10000;
     data();
+    makingStruct();
     system("cls");
     cout << endl << endl << "\t" << "\t" << "\t" << "\t" << "\t" << "\t";
     cout << "Registering your account...";

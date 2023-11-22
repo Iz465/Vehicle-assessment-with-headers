@@ -1,4 +1,1 @@
-iziz,Motorbike,Natural Disastor,120,1200
-dav,Motorbike,Fire,120,1200
-zammy,Car,Car Crash,140,1400
-maced,Car,Car Crash,140,1400iziz,Motorbike,Natural Disastor,120,1200
+iziz,Motorbike,Fire,170,1700,Natural Disastor

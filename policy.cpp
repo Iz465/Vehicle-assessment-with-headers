@@ -26,11 +26,14 @@ int boat = 100;
 string vehicleType;
 int price;
 int chosenPolicy;
+int chosenPolicy2;
 int fire = 50;
 int theft = 50;
 int carCrash = 60;
 int disastor = 50;
 string policyType;
+string policyType2;
+string multiplePolicy;
 
 int yearlyPrice;
 int policyCount = 0;
@@ -86,7 +89,7 @@ void rates() {
 }
 
 
-void policy_answer(int a) {
+void policy_answer() {
     cout << "Which Policy are you applying for? 1. = Fire. 2. = Theft. 3. = Car Crash. 4. = Natural Disastor ";
     cin >> answer;
         switch (answer) {
@@ -96,7 +99,26 @@ void policy_answer(int a) {
         case 3: chosenPolicy = carCrash; policyType = "Car Crash"; break;
         case 4: chosenPolicy = disastor; policyType = "Natural Disastor"; break;
         }
-    
+        spacing();
+        cout << "Would you like to apply for another policy?(1. = Yes | 2. = No)"; cin >> answer;
+        spacing();
+        if (answer == 1) {
+            cout << policyType << endl;
+            cout << "Which Policy are you applying for? 1. = Fire. 2. = Theft. 3. = Car Crash. 4. = Natural Disastor ";
+            cin >> answer;
+            switch (answer) {
+
+            case 1: chosenPolicy2 = fire; policyType2 = "Fire"; break;
+            case 2: chosenPolicy2 = theft; policyType2 = "Theft"; break;
+            case 3: chosenPolicy2 = carCrash; policyType2 = "Car Crash"; break;
+            case 4: chosenPolicy2 = disastor; policyType2 = "Natural Disastor"; break;
+            }
+            
+           if (policyType2 == policyType) {
+                chosenPolicy2 = 0; policyType2 = "";
+            }
+           
+        }
 }
 
 
@@ -117,7 +139,7 @@ void quote() {
     case 4: chosenVehicle = boat; vehicleType = "Boat"; break;
     }
     
-    policy_answer(policyCount);
+    policy_answer();
     
 
 
@@ -131,9 +153,11 @@ void quote() {
 
 
 void vehicle_data() {
-    price += chosenVehicle + chosenPolicy;
+    price += chosenVehicle + chosenPolicy + chosenPolicy2;
     yearlyPrice += price * 10;
- 
+    cout << chosenPolicy << endl;
+    cout << chosenVehicle << endl;
+    cout << chosenPolicy2 << endl;
 }
 
 void policy_registration() {
@@ -149,7 +173,7 @@ void policy_registration() {
     cout << "Address: " << specific[username].address << endl; spacing(); red();
     cout << "Vehicle Code: " << specific[username].vehicle << endl; spacing(); yellow();
     cout << "Vehicle Type: " << specificPolicy[username].vehicleType << endl; spacing(); red();
-    cout << "Policiy you have applied for: " << specificPolicy[username].policyType << endl; spacing(); yellow();
+    cout << "Policies you have applied for: " << specificPolicy[username].policyType << ". " << specificPolicy[username].policyType2 << endl; spacing(); yellow();
     cout << "The Price for the insurance you have requested: $" << specificPolicy[username].price << " monthly and $" << specificPolicy[username].yearlyPrice << " yearly";
 
 }

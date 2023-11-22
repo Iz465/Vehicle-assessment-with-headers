@@ -40,6 +40,7 @@ extern string password;
 extern string authorised;
 extern int policy_number;
 extern string policyType;
+extern string policyType2;
 extern string vehicleType;
 extern int price;
 extern int yearlyPrice;
@@ -125,7 +126,7 @@ void dataPolicy() {
     myfile.open("policy.txt", ios::app);
     if (myfile.is_open()) {
 
-        myfile << username << ',' << vehicleType << ',' << policyType << ',' << price << ',' << yearlyPrice << endl;
+        myfile << username << ',' << vehicleType << ',' << policyType << ',' << price << ',' << yearlyPrice << ',' << policyType2 << endl;
 
     }
     myfile.close();
@@ -145,6 +146,7 @@ void policyStruct() {
             getline(currentline, policyInformation.policyType, ',');
             getline(currentline, policyInformation.price, ',');
             getline(currentline, policyInformation.yearlyPrice, ',');
+            getline(currentline, policyInformation.policyType2);
 
             specificPolicy.insert({ policyInformation.username, policyInformation });
             policyVector.push_back(policyInformation);
@@ -158,7 +160,7 @@ void dataRenewal() {
     myfile.open("renewal.txt", ios::app);
     if (myfile.is_open()) {
 
-        myfile << username << ',' << card << ',' << code << ',' << price << ',' << renewalCount << endl;
+        myfile << username << ',' << price << ',' << renewalCount << endl;
 
     }
     myfile.close();
@@ -175,8 +177,6 @@ void renewalStruct() {
             stringstream currentline;
             currentline.str(line);
             getline(currentline, renewalInformation.username, ',');
-            getline(currentline, renewalInformation.card, ',');
-            getline(currentline, renewalInformation.code, ',');
             getline(currentline, renewalInformation.price, ',');
             getline(currentline, renewalInformation.count, ',');
             
