@@ -95,7 +95,6 @@ void registrationReport() {
     
 
 }
-
 void renewalReport() {
     renewalVector.clear();
     renewalStruct();
@@ -106,7 +105,7 @@ void renewalReport() {
         countingNum();
         spacing();
         cout << "Username: " << i.username << " | renewal time applied for: ";
-        if (i.count == "0") {
+        if (i.count == "") {
             cout << "One year " << endl;
         }
         else {
@@ -155,16 +154,19 @@ void discountReport() {
     benefitsStruct();
     cout << "Special Discounts" << endl << endl; spacing(); yellow();
     cout << "Here you can decide the % for our discounts" << endl << endl; 
+    int benefitsCount = 0;
     
     for (auto i : benefitsVector) {
-        countingNum();
-        spacing();
-        cout << "These are our current discount prices" << endl << endl; spacing(); 
-        cout << "New Signee Discounts = " << i.newDiscount << "%" << endl; spacing(); 
-        cout << "Multi Policy Discounts = " << i.multiDiscount << "%" << endl; spacing(); 
-        cout << "Renewal Discounts = " << i.renewalDiscount << "%" << endl; spacing(); 
-        cout << "Review Discounts = " << i.reviewDiscount << "%" << endl; spacing(); 
-        
+        benefitsCount++;
+        if (benefitsCount == 1) {
+          
+            spacing(); red();
+            cout << "These are our current discount prices" << endl << endl; spacing(); yellow();
+            cout << "New Signee Discounts = " << i.newDiscount << "%" << endl; spacing(); red();
+            cout << "Multi Policy Discounts = " << i.multiDiscount << "%" << endl; spacing(); yellow();
+            cout << "Renewal Discounts = " << i.renewalDiscount << "%" << endl; spacing(); red();
+            cout << "Review Discounts = " << i.reviewDiscount << "%" << endl; spacing(); yellow();
+        }
     }
 
     cout << "Would you like to update the discounts?(1. = Yes | 2. = No) " << endl; spacing(); red();

@@ -155,9 +155,7 @@ void quote() {
 void vehicle_data() {
     price += chosenVehicle + chosenPolicy + chosenPolicy2;
     yearlyPrice += price * 10;
-    cout << chosenPolicy << endl;
-    cout << chosenVehicle << endl;
-    cout << chosenPolicy2 << endl;
+    
 }
 
 void policy_registration() {

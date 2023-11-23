@@ -1,7 +1,6 @@
 Isak,Molving,02/09/2000,Male,02102541126,isakmolvviiing@gmail.com,97 Island Bay Road,ABCD45154,iziz,rune,true,41
 Dave,Lar,01/01/1900,Male,12512512515,davidlar@gmail.com,Auckland New Zealand,GHOI123,dav,butter,false,1214
-Garry,Mace,23/12/54,Male,1212999,garrymace@gmail.com,The misty Swamps,6868ttt,maced,spike,false,6591
-Zamorak,Z,01/01/0000,Male,666,zamorak@gmail.com,Gielinor,666,zammy,havoc,false,6830
-Saradomin,Nature,1/1/1,God,111,sara@gmail.com,Falador,54,sara,light,false,540
-Aozora,Forest,1/1/1,Female,541,forest@gmail.com,Earth,54,Hazel,jaj,false,3038
+Garry,Mace,23/12/54,Male,1212999,garrymace@gmail.com,Piha,6868ttt,maced,spike,false,6591
+Zack,Jarn,01/01/0000,Male,666,zack@gmail.com,Miruwai,666,zaz,havoc,false,6830
+Aozora,Forest,1/1/1,Female,541,forest@gmail.com,Napier,54,Hazel,jaj,false,3038
 

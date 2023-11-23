@@ -1,1 +1,3 @@
-iziz,Motorbike,Fire,170,1700,Natural Disastor
+dav,Car,Fire,130,1300,
+zammy,Car,Fire,130,1300,
+Hazel,Boat,Natural Disastor,150,1500,
